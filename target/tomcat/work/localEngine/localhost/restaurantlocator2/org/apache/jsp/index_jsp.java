@@ -69,7 +69,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<title>Insert title here</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("<h1>Restaurant Finder!</h1>\r\n");
+      out.write("<h1>Restaurant Finder!C1</h1>\r\n");
       out.write("<h3>Find by zipcode:</h3>\r\n");
       if (_jspx_meth_s_005fform_005f0(_jspx_page_context))
         return;

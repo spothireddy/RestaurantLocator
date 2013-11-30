@@ -11,6 +11,8 @@ import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.sindhup.restaurantlocator2.Restaurant;
+import com.sindhup.restaurantlocator2.RestaurantDAOImpl;
 
 public class RestaurantAction extends ActionSupport implements ModelDriven<Restaurant>{
 

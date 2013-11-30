@@ -14,6 +14,7 @@ import org.apache.struts2.dispatcher.mapper.ActionMapping;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.sindhup.restaurantlocator2.extras.Person;
 
 public class PersonAction extends ActionSupport implements ModelDriven{
 

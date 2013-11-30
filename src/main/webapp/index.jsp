@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Restaurant Finder!</h1>
+<h1>Restaurant Finder!C1</h1>
 <h3>Find by zipcode:</h3>
 <s:form  action="selectZipcodeAction" >
   <s:textfield name="postcode" label="Postcode" />
