@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+
+  <constant name="struts.devMode" value="true"/>
+   <package name="user" extends="struts-default">
+   
+      <action name="loginaction" 
+         class="com.sindhup.restaurantlocator2.actions.LoginAction"
+         method="execute">
+         <result name="success">/success.jsp</result>
+         <result name="error">/error.jsp</result>
+      </action>
+      
+       <action name="addPersonAction" 
+         class="com.sindhup.restaurantlocator2.actions.PersonAction"
+         method="execute">
+         <result name="success">/success.jsp</result>
+         <result name="error">/error.jsp</result>
+      </action>
+   
+   	
+   	 <action name="selectZipcodeAction" 
+         class="com.sindhup.restaurantlocator2.actions.RestaurantAction"
+         method="selectZipcode">
+         <result name="success">/success.jsp</result>
+         <result name="error">/error.jsp</result>
+      </action>
+      
+      <action name="selectZipCusAction" 
+         class="com.sindhup.restaurantlocator2.actions.RestaurantAction"
+         method="selectZipCus">
+         <result name="success">/success.jsp</result>
+         <result name="error">/error.jsp</result>
+      </action>
+      
+      
+   </package>
+</struts>
