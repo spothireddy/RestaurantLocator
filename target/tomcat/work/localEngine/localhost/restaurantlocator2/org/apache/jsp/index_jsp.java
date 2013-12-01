@@ -80,6 +80,12 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_s_005fform_005f1(_jspx_page_context))
         return;
       out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<h3>Test zip:</h3>\r\n");
+      if (_jspx_meth_s_005fform_005f2(_jspx_page_context))
+        return;
+      out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
@@ -280,6 +286,88 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       return true;
     }
     _005fjspx_005ftagPool_005fs_005fsubmit_005fnobody.reuse(_jspx_th_s_005fsubmit_005f1);
+    return false;
+  }
+
+  private boolean _jspx_meth_s_005fform_005f2(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  s:form
+    org.apache.struts2.views.jsp.ui.FormTag _jspx_th_s_005fform_005f2 = (org.apache.struts2.views.jsp.ui.FormTag) _005fjspx_005ftagPool_005fs_005fform_0026_005faction.get(org.apache.struts2.views.jsp.ui.FormTag.class);
+    _jspx_th_s_005fform_005f2.setPageContext(_jspx_page_context);
+    _jspx_th_s_005fform_005f2.setParent(null);
+    // /index.jsp(28,0) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fform_005f2.setAction("testMapAction");
+    int _jspx_eval_s_005fform_005f2 = _jspx_th_s_005fform_005f2.doStartTag();
+    if (_jspx_eval_s_005fform_005f2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      if (_jspx_eval_s_005fform_005f2 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+        out = _jspx_page_context.pushBody();
+        _jspx_th_s_005fform_005f2.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+        _jspx_th_s_005fform_005f2.doInitBody();
+      }
+      do {
+        out.write("\r\n");
+        out.write("  ");
+        if (_jspx_meth_s_005ftextfield_005f3(_jspx_th_s_005fform_005f2, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("  ");
+        if (_jspx_meth_s_005fsubmit_005f2(_jspx_th_s_005fform_005f2, _jspx_page_context))
+          return true;
+        out.write('\r');
+        out.write('\n');
+        int evalDoAfterBody = _jspx_th_s_005fform_005f2.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+      if (_jspx_eval_s_005fform_005f2 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+        out = _jspx_page_context.popBody();
+      }
+    }
+    if (_jspx_th_s_005fform_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fs_005fform_0026_005faction.reuse(_jspx_th_s_005fform_005f2);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fs_005fform_0026_005faction.reuse(_jspx_th_s_005fform_005f2);
+    return false;
+  }
+
+  private boolean _jspx_meth_s_005ftextfield_005f3(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fform_005f2, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  s:textfield
+    org.apache.struts2.views.jsp.ui.TextFieldTag _jspx_th_s_005ftextfield_005f3 = (org.apache.struts2.views.jsp.ui.TextFieldTag) _005fjspx_005ftagPool_005fs_005ftextfield_0026_005fname_005flabel_005fnobody.get(org.apache.struts2.views.jsp.ui.TextFieldTag.class);
+    _jspx_th_s_005ftextfield_005f3.setPageContext(_jspx_page_context);
+    _jspx_th_s_005ftextfield_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f2);
+    // /index.jsp(29,2) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005ftextfield_005f3.setName("postcode");
+    // /index.jsp(29,2) name = label type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005ftextfield_005f3.setLabel("Postcode");
+    int _jspx_eval_s_005ftextfield_005f3 = _jspx_th_s_005ftextfield_005f3.doStartTag();
+    if (_jspx_th_s_005ftextfield_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fs_005ftextfield_0026_005fname_005flabel_005fnobody.reuse(_jspx_th_s_005ftextfield_005f3);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fs_005ftextfield_0026_005fname_005flabel_005fnobody.reuse(_jspx_th_s_005ftextfield_005f3);
+    return false;
+  }
+
+  private boolean _jspx_meth_s_005fsubmit_005f2(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fform_005f2, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  s:submit
+    org.apache.struts2.views.jsp.ui.SubmitTag _jspx_th_s_005fsubmit_005f2 = (org.apache.struts2.views.jsp.ui.SubmitTag) _005fjspx_005ftagPool_005fs_005fsubmit_005fnobody.get(org.apache.struts2.views.jsp.ui.SubmitTag.class);
+    _jspx_th_s_005fsubmit_005f2.setPageContext(_jspx_page_context);
+    _jspx_th_s_005fsubmit_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f2);
+    int _jspx_eval_s_005fsubmit_005f2 = _jspx_th_s_005fsubmit_005f2.doStartTag();
+    if (_jspx_th_s_005fsubmit_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fs_005fsubmit_005fnobody.reuse(_jspx_th_s_005fsubmit_005f2);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fs_005fsubmit_005fnobody.reuse(_jspx_th_s_005fsubmit_005f2);
     return false;
   }
 }

@@ -46,6 +46,9 @@ public class RestaurantAction extends ActionSupport implements ModelDriven<Resta
 		return "success";
 	}
 	
+	public String testMap(){
+		return "success";
+	}
 	public ArrayList<Restaurant> getRestaurantList(){
 		return restaurantList;
 	}

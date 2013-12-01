@@ -37,6 +37,13 @@
          <result name="error">/error.jsp</result>
       </action>
       
+       <action name="testMapAction" 
+         class="com.sindhup.restaurantlocator2.actions.RestaurantAction"
+         method="testMap">
+         <result name="success">/testmap.jsp</result>
+         <result name="error">/error.jsp</result>
+      </action>
+      
       
    </package>
 </struts>

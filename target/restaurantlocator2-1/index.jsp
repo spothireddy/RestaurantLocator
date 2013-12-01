@@ -22,5 +22,12 @@
   <s:textfield name="cuisine" label="Cuisine" />
   <s:submit />
 </s:form>
+
+
+<h3>Test zip:</h3>
+<s:form  action="testMapAction" >
+  <s:textfield name="postcode" label="Postcode" />
+  <s:submit />
+</s:form>
 </body>
 </html>
