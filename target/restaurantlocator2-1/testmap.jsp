@@ -45,7 +45,7 @@ var mapOptions;
 		   });
 
 		 
-		 address = "<h1>SOMETHING restARANDJ</h1>;"
+		 address = "SOMETHING restARANDJ;"
 		 var infowindow = new google.maps.InfoWindow({
 			   content:address
 			   });

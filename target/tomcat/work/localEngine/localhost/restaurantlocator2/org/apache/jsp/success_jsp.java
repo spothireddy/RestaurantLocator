@@ -3,6 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import com.sindhup.restaurantlocator2.Restaurant;
+import java.util.ArrayList;
 
 public final class success_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -10,9 +12,6 @@ public final class success_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List _jspx_dependants;
-
-  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue;
-  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody;
 
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
@@ -22,15 +21,11 @@ public final class success_jsp extends org.apache.jasper.runtime.HttpJspBase
   }
 
   public void _jspInit() {
-    _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
 
   public void _jspDestroy() {
-    _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue.release();
-    _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -58,20 +53,92 @@ public final class success_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("\r\n");
-      out.write("\r\n");
+      out.write("   \r\n");
+      out.write(" \r\n");
+      out.write(" \r\n");
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
       out.write("<html>\r\n");
       out.write("<head>\r\n");
-      out.write("<title>Successful Zip Entry</title>\r\n");
+      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">\r\n");
+      out.write("<script src=\"https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false\"></script>\r\n");
+      out.write("<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js\"></script>\r\n");
+      out.write("\r\n");
+      out.write("<title>Test Map</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("   \r\n");
-      out.write("<b>All the restaurants</b><br/>\r\n");
-      if (_jspx_meth_s_005fiterator_005f0(_jspx_page_context))
-        return;
+      out.write("<h1>Test Map With multiple</h1>\r\n");
+ArrayList<Restaurant> rList = (ArrayList<Restaurant>)request.getAttribute("resList");
       out.write("\r\n");
-      out.write("<br/><br/>\r\n");
+      out.write("\r\n");
+      out.print(rList.size() );
+      out.write("\r\n");
+      out.write("\t \r\n");
+      out.write("<script type=\"text/javascript\">\r\n");
+if (rList.size()>0){
+      out.write("    \r\n");
+      out.write("\t  var markers = [];\r\n");
+      out.write("\t \r\n");
+      out.write("\t function initialize() {\r\n");
+      out.write("\t\t var map;\r\n");
+      out.write("\t\t var mapOptions;\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\t\t  var latlng = new google.maps.LatLng(37.3175, -122.0419);\r\n");
+      out.write("\t\t \r\n");
+      out.write("\t\t  mapOptions = {\r\n");
+      out.write("\t\t\t\t \tzoom:8,\r\n");
+      out.write("\t\t\t\t \tcenter: latlng,\r\n");
+      out.write("\t\t\t\t \tmapTypeId: google.maps.MapTypeId.ROADMAP\r\n");
+      out.write("\t\t\t\t   };\r\n");
+      out.write("\t\t\t\t   \r\n");
+      out.write("\t\t\t\t    \r\n");
+      out.write("\t\t   $(document).ready(function () {\r\n");
+      out.write("\t\t \tmap = new google.maps.Map(document.getElementById(\"map_canvas\"), mapOptions);\r\n");
+      out.write("\t\t });\r\n");
+      out.write("\t\t \r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\t\t   ");
+  for (int z=0; z< rList.size();z++) {
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\t\t   ");
+Restaurant r = (Restaurant) rList.get(z); 
+      out.write("\r\n");
+      out.write("\t\r\n");
+      out.write("\t\t     \tvar latlng2 = new google.maps.LatLng(");
+      out.print(r.getLatitude());
+      out.write(',');
+      out.print(r.getLongitude());
+      out.write(");\r\n");
+      out.write("\t\t     \tmarker=new google.maps.Marker({\r\n");
+      out.write("\t\t     \t\t   position:latlng2,\r\n");
+      out.write("\t\t     \t\t   icon:'http://www.google.com/mapfiles/marker.png',\r\n");
+      out.write("\t\t     \t\t  //animation:google.maps.Animation.BOUNCE\r\n");
+      out.write("\t\t     \t\t   });\r\n");
+      out.write("   \t\t\t marker.setMap(map)\r\n");
+      out.write("\r\n");
+      out.write("\t");
+ }
+      out.write("     \r\n");
+      out.write("\t\t   \t   \t \r\n");
+      out.write("\t }\r\n");
+      out.write("\t \r\n");
+      out.write("\r\n");
+      out.write("\t  ");
+}
+      out.write("\t \r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("</script>\r\n");
+      out.write("<table><tr><td width=\"10\" colspan=\"2\"> <div id=\"map_canvas\" style=\"width: 580px; height: 500px\"></div></td></tr></table>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("</body>\r\n");
+      out.write("<script>\r\n");
+      out.write("google.maps.event.addDomListener(window, 'load', initialize);\r\n");
+      out.write("</script>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
@@ -83,110 +150,5 @@ public final class success_jsp extends org.apache.jasper.runtime.HttpJspBase
     } finally {
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
-  }
-
-  private boolean _jspx_meth_s_005fiterator_005f0(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  s:iterator
-    org.apache.struts2.views.jsp.IteratorTag _jspx_th_s_005fiterator_005f0 = (org.apache.struts2.views.jsp.IteratorTag) _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue.get(org.apache.struts2.views.jsp.IteratorTag.class);
-    _jspx_th_s_005fiterator_005f0.setPageContext(_jspx_page_context);
-    _jspx_th_s_005fiterator_005f0.setParent(null);
-    // /success.jsp(12,0) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fiterator_005f0.setValue("restaurantList");
-    int _jspx_eval_s_005fiterator_005f0 = _jspx_th_s_005fiterator_005f0.doStartTag();
-    if (_jspx_eval_s_005fiterator_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-      if (_jspx_eval_s_005fiterator_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-        out = _jspx_page_context.pushBody();
-        _jspx_th_s_005fiterator_005f0.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
-        _jspx_th_s_005fiterator_005f0.doInitBody();
-      }
-      do {
-        out.write('\r');
-        out.write('\n');
-        out.write('	');
-        if (_jspx_meth_s_005fproperty_005f0(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
-          return true;
-        out.write(" , \r\n");
-        out.write("\t");
-        if (_jspx_meth_s_005fproperty_005f1(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
-          return true;
-        out.write(",\r\n");
-        out.write("\t");
-        if (_jspx_meth_s_005fproperty_005f2(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
-          return true;
-        out.write("<br/>\r\n");
-        int evalDoAfterBody = _jspx_th_s_005fiterator_005f0.doAfterBody();
-        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-          break;
-      } while (true);
-      if (_jspx_eval_s_005fiterator_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-        out = _jspx_page_context.popBody();
-      }
-    }
-    if (_jspx_th_s_005fiterator_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue.reuse(_jspx_th_s_005fiterator_005f0);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue.reuse(_jspx_th_s_005fiterator_005f0);
-    return false;
-  }
-
-  private boolean _jspx_meth_s_005fproperty_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fiterator_005f0, PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  s:property
-    org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f0 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
-    _jspx_th_s_005fproperty_005f0.setPageContext(_jspx_page_context);
-    _jspx_th_s_005fproperty_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /success.jsp(13,1) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f0.setValue("name");
-    int _jspx_eval_s_005fproperty_005f0 = _jspx_th_s_005fproperty_005f0.doStartTag();
-    if (_jspx_th_s_005fproperty_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f0);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f0);
-    return false;
-  }
-
-  private boolean _jspx_meth_s_005fproperty_005f1(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fiterator_005f0, PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  s:property
-    org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f1 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
-    _jspx_th_s_005fproperty_005f1.setPageContext(_jspx_page_context);
-    _jspx_th_s_005fproperty_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /success.jsp(14,1) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f1.setValue("resID");
-    int _jspx_eval_s_005fproperty_005f1 = _jspx_th_s_005fproperty_005f1.doStartTag();
-    if (_jspx_th_s_005fproperty_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f1);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f1);
-    return false;
-  }
-
-  private boolean _jspx_meth_s_005fproperty_005f2(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fiterator_005f0, PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  s:property
-    org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f2 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
-    _jspx_th_s_005fproperty_005f2.setPageContext(_jspx_page_context);
-    _jspx_th_s_005fproperty_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /success.jsp(15,1) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f2.setValue("postcode");
-    int _jspx_eval_s_005fproperty_005f2 = _jspx_th_s_005fproperty_005f2.doStartTag();
-    if (_jspx_th_s_005fproperty_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f2);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f2);
-    return false;
   }
 }

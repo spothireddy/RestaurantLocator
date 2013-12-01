@@ -4,17 +4,20 @@ package com.sindhup.restaurantlocator2.actions;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.util.ServletContextAware;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.Preparable;
 import com.sindhup.restaurantlocator2.Restaurant;
 import com.sindhup.restaurantlocator2.RestaurantDAOImpl;
 
-public class RestaurantAction extends ActionSupport implements ModelDriven<Restaurant>{
+public class RestaurantAction extends ActionSupport implements ModelDriven<ArrayList<Restaurant>>, ServletContextAware{
 
 	/**
 	 * 
@@ -29,13 +32,14 @@ public class RestaurantAction extends ActionSupport implements ModelDriven<Resta
 		return "success";
 	}
 	
-	public Restaurant getModel() {
-		return restaurant;
+	public ArrayList<Restaurant> getModel() {
+		return restaurantList;
 	}
 	
 	public String selectZipcode() throws NumberFormatException, SQLException{
 		restaurantList  = new ArrayList<Restaurant>();
 		restaurantList = restaurantDAO.selectPostcode(Integer.parseInt(request.getParameter("postcode")));
+		request.setAttribute("resList", restaurantList);
 		return "success";
 	}
 	
@@ -43,14 +47,25 @@ public class RestaurantAction extends ActionSupport implements ModelDriven<Resta
 		restaurantList  = new ArrayList<Restaurant>();
 		restaurantList = restaurantDAO.selectZipCus(Integer.parseInt(request.getParameter("postcode")), 
 				request.getParameter("cuisine"));
+		request.setAttribute("resList", restaurantList);
 		return "success";
 	}
 	
-	public String testMap(){
+	public String testMap() throws NumberFormatException, SQLException{
+		restaurantList  = new ArrayList<Restaurant>();
+		restaurantList = restaurantDAO.selectPostcode(Integer.parseInt(request.getParameter("postcode")));
+		request.setAttribute("resList", restaurantList);
 		return "success";
+
 	}
 	public ArrayList<Restaurant> getRestaurantList(){
 		return restaurantList;
 	}
+
+	public void setServletContext(ServletContext arg0) {
+		request.setAttribute("resList", restaurantList);
+		
+	}
+
 
 }

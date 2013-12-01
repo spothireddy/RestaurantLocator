@@ -33,6 +33,8 @@
       <action name="selectZipCusAction" 
          class="com.sindhup.restaurantlocator2.actions.RestaurantAction"
          method="selectZipCus">
+         <interceptor-ref name="modelDriven"/>
+         <interceptor-ref name="basicStack"/>
          <result name="success">/success.jsp</result>
          <result name="error">/error.jsp</result>
       </action>
@@ -40,7 +42,7 @@
        <action name="testMapAction" 
          class="com.sindhup.restaurantlocator2.actions.RestaurantAction"
          method="testMap">
-         <result name="success">/testmap.jsp</result>
+         <result name="success">/testmap1.jsp</result>
          <result name="error">/error.jsp</result>
       </action>
       
