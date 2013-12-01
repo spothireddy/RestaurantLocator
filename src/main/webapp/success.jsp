@@ -14,6 +14,7 @@
 </head>
 <body>
 <h1>Test Map With multiple</h1>
+<%=request.getParameter("postcode") %>
 <%ArrayList<Restaurant> rList = (ArrayList<Restaurant>)request.getAttribute("resList");%>
 
 <%=rList.size() %>
@@ -25,38 +26,70 @@
 	 function initialize() {
 		 var map;
 		 var mapOptions;
-
-
-		  var latlng = new google.maps.LatLng(37.3175, -122.0419);
+		 var latlng;
+		 var geocoder;
+		 var resAd;
+		 
 		 
 		  mapOptions = {
-				 	zoom:8,
-				 	center: latlng,
+				 	zoom:12,
 				 	mapTypeId: google.maps.MapTypeId.ROADMAP
 				   };
 				   
 				    
 		   $(document).ready(function () {
 		 	map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+		 	geocoder= new google.maps.Geocoder();
 		 });
+
+			 geocoder.geocode( { 'address': '<%=request.getParameter("postcode") %>'}, function(results, status) {
+			      if (status == google.maps.GeocoderStatus.OK) {
+			    	  map.setCenter(results[0].geometry.location);
+			      } 
+			    });
 		 
 
 
 		   <%  for (int z=0; z< rList.size();z++) {%>
 
 		   <%Restaurant r = (Restaurant) rList.get(z); %>
-	
+				
 		     	var latlng2 = new google.maps.LatLng(<%=r.getLatitude()%>,<%=r.getLongitude()%>);
 		     	marker=new google.maps.Marker({
 		     		   position:latlng2,
 		     		   icon:'http://www.google.com/mapfiles/marker.png',
 		     		  //animation:google.maps.Animation.BOUNCE
 		     		   });
-   			 marker.setMap(map)
+		     	marker.setMap(map);
+		     	
+		     	google.maps.event.addListener(marker, 'click', (function(marker, content) {
+		            return function() {
+		                infowindow.setContent(content);
+		                infowindow.open(map, marker);
+		            }
+		        })(marker, content));
+		     	var infowindow = new google.maps.InfoWindow({
+					   content:'<%=r.getResID()%>'
+					   });
+		     	infowindow.open(map,marker);
+
+		     	google.maps.event.addListener(marker, 'mouseover', function() {
+		     	    infowindow.open(map, this);
+		     	});
+
+		     	// assuming you also want to hide the infowindow when user mouses-out
+		     	google.maps.event.addListener(marker, 'mouseout', function() {
+		     	    infowindow.close();
+		     	});
+		     	infowindow.close();
+					 
+					 
 
 	<% }%>     
 		   	   	 
 	 }
+	 
+
 	 
 
 	  <%}%>	 
@@ -66,7 +99,19 @@
 <table><tr><td width="10" colspan="2"> <div id="map_canvas" style="width: 580px; height: 500px"></div></td></tr></table>
 
 
+<table>
+<s:iterator value="restaurantList">
+<tr>
+<td><s:property value="resID"/></td>
+<td><s:property value="name"/></td>
+<td><s:property value="address"/></td>
+<td><s:property value="latitude"/></td>
+<td><s:property value="longitude"/></td>
+<td><s:property value="postcode"/></td>
+</tr>
+</s:iterator>
 
+</table>
 </body>
 <script>
 google.maps.event.addDomListener(window, 'load', initialize);

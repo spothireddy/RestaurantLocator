@@ -40,6 +40,7 @@ public class RestaurantAction extends ActionSupport implements ModelDriven<Array
 		restaurantList  = new ArrayList<Restaurant>();
 		restaurantList = restaurantDAO.selectPostcode(Integer.parseInt(request.getParameter("postcode")));
 		request.setAttribute("resList", restaurantList);
+
 		return "success";
 	}
 	
