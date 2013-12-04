@@ -31,6 +31,7 @@ public class RestaurantAction extends ActionSupport implements ModelDriven<Array
 	RestaurantDAOImpl restaurantDAO = new RestaurantDAOImpl();
 	ArrayList<Restaurant> restaurantList  = new ArrayList<Restaurant>();
 	ArrayList<Restaurant> commentList  = new ArrayList<Restaurant>();
+	ArrayList<Restaurant> restaurantCuisineList = new ArrayList<Restaurant>();
 	private int resID;
 	
 	public int getResID() {
@@ -79,13 +80,16 @@ public class RestaurantAction extends ActionSupport implements ModelDriven<Array
 
 	}
 	
-	public String info(){
+	public String info() throws SQLException{
+		restaurantList = restaurantDAO.selectRestaurant(resID);
+		restaurantCuisineList = restaurantDAO.selecCuisines(resID);
 		return "success";
 	}
 	
-	public String comment(){
-		//somestuff
-		//add comment to database
+	public String addComment() throws SQLException{
+		this.setResID(Integer.parseInt(request.getParameter("resID")));
+		restaurantList = restaurantDAO.selectRestaurant(resID);
+		restaurantCuisineList = restaurantDAO.selecCuisines(resID);
 		return "success";
 	}
 	public ArrayList<Restaurant> getRestaurantList(){

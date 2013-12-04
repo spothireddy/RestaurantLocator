@@ -53,5 +53,12 @@
          <result name="error">/error.jsp</result>
       </action>
       
+       <action name="addCommentAction" 
+         class="com.sindhup.restaurantlocator2.actions.RestaurantAction"
+         method="addComment">
+         <result name="success">/info.jsp</result>
+         <result name="error">/error.jsp</result>
+      </action>
+      
    </package>
 </struts>

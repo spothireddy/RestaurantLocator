@@ -7,8 +7,9 @@ public class User {
 	private int resID;
 	private int commentID;
 	private String userName;
-	private String comment;
-	private int rating;
+	private String userComment;
+	private int userRating;
+	
 	public int getResID() {
 		return resID;
 	}
@@ -27,18 +28,19 @@ public class User {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public String getComment() {
-		return comment;
+	public String getUserComment() {
+		return userComment;
 	}
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setUserComment(String userCcomment) {
+		this.userComment = userCcomment;
 	}
-	public int getRating() {
-		return rating;
+	public int getUserRating() {
+		return userRating;
 	}
-	public void setRating(int rating) {
-		this.rating = rating;
+	public void setUserRating(int userRating) {
+		this.userRating = userRating;
 	}
+	
 	
 	
 	

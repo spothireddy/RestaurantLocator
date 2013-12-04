@@ -79,6 +79,103 @@ public final class success_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<script src=\"https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false\"></script>\r\n");
       out.write("<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js\"></script>\r\n");
       out.write("\r\n");
+      out.write("<style type='text/css'>\r\n");
+      out.write(" .CSSTableGenerator {\r\n");
+      out.write("\tmargin:0px;padding:0px;\r\n");
+      out.write("\twidth:100%;\r\n");
+      out.write("\tbox-shadow: 10px 10px 5px #888888;\r\n");
+      out.write("\tborder:1px solid #000000;\r\n");
+      out.write("\t\r\n");
+      out.write("\t-moz-border-radius-bottomleft:0px;\r\n");
+      out.write("\t-webkit-border-bottom-left-radius:0px;\r\n");
+      out.write("\tborder-bottom-left-radius:0px;\r\n");
+      out.write("\t\r\n");
+      out.write("\t-moz-border-radius-bottomright:0px;\r\n");
+      out.write("\t-webkit-border-bottom-right-radius:0px;\r\n");
+      out.write("\tborder-bottom-right-radius:0px;\r\n");
+      out.write("\t\r\n");
+      out.write("\t-moz-border-radius-topright:0px;\r\n");
+      out.write("\t-webkit-border-top-right-radius:0px;\r\n");
+      out.write("\tborder-top-right-radius:0px;\r\n");
+      out.write("\t\r\n");
+      out.write("\t-moz-border-radius-topleft:0px;\r\n");
+      out.write("\t-webkit-border-top-left-radius:0px;\r\n");
+      out.write("\tborder-top-left-radius:0px;\r\n");
+      out.write("}.CSSTableGenerator table{\r\n");
+      out.write("    border-collapse: collapse;\r\n");
+      out.write("        border-spacing: 0;\r\n");
+      out.write("\twidth:100%;\r\n");
+      out.write("\theight:100%;\r\n");
+      out.write("\tmargin:0px;padding:0px;\r\n");
+      out.write("}.CSSTableGenerator tr:last-child td:last-child {\r\n");
+      out.write("\t-moz-border-radius-bottomright:0px;\r\n");
+      out.write("\t-webkit-border-bottom-right-radius:0px;\r\n");
+      out.write("\tborder-bottom-right-radius:0px;\r\n");
+      out.write("}\r\n");
+      out.write(".CSSTableGenerator table tr:first-child td:first-child {\r\n");
+      out.write("\t-moz-border-radius-topleft:0px;\r\n");
+      out.write("\t-webkit-border-top-left-radius:0px;\r\n");
+      out.write("\tborder-top-left-radius:0px;\r\n");
+      out.write("}\r\n");
+      out.write(".CSSTableGenerator table tr:first-child td:last-child {\r\n");
+      out.write("\t-moz-border-radius-topright:0px;\r\n");
+      out.write("\t-webkit-border-top-right-radius:0px;\r\n");
+      out.write("\tborder-top-right-radius:0px;\r\n");
+      out.write("}.CSSTableGenerator tr:last-child td:first-child{\r\n");
+      out.write("\t-moz-border-radius-bottomleft:0px;\r\n");
+      out.write("\t-webkit-border-bottom-left-radius:0px;\r\n");
+      out.write("\tborder-bottom-left-radius:0px;\r\n");
+      out.write("}.CSSTableGenerator tr:hover td{\r\n");
+      out.write("\t\r\n");
+      out.write("}\r\n");
+      out.write(".CSSTableGenerator tr:nth-child(odd){ background-color:#ffaa56; }\r\n");
+      out.write(".CSSTableGenerator tr:nth-child(even)    { background-color:#ffffff; }.CSSTableGenerator td{\r\n");
+      out.write("\tvertical-align:middle;\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      out.write("\tborder:1px solid #000000;\r\n");
+      out.write("\tborder-width:0px 1px 1px 0px;\r\n");
+      out.write("\ttext-align:left;\r\n");
+      out.write("\tpadding:7px;\r\n");
+      out.write("\tfont-size:10px;\r\n");
+      out.write("\tfont-family:Arial;\r\n");
+      out.write("\tfont-weight:normal;\r\n");
+      out.write("\tcolor:#000000;\r\n");
+      out.write("}.CSSTableGenerator tr:last-child td{\r\n");
+      out.write("\tborder-width:0px 1px 0px 0px;\r\n");
+      out.write("}.CSSTableGenerator tr td:last-child{\r\n");
+      out.write("\tborder-width:0px 0px 1px 0px;\r\n");
+      out.write("}.CSSTableGenerator tr:last-child td:last-child{\r\n");
+      out.write("\tborder-width:0px 0px 0px 0px;\r\n");
+      out.write("}\r\n");
+      out.write(".CSSTableGenerator tr:first-child td{\r\n");
+      out.write("\t\tbackground:-o-linear-gradient(bottom, #ff7f00 5%, #bf5f00 100%);\tbackground:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff7f00), color-stop(1, #bf5f00) );\r\n");
+      out.write("\tbackground:-moz-linear-gradient( center top, #ff7f00 5%, #bf5f00 100% );\r\n");
+      out.write("\tfilter:progid:DXImageTransform.Microsoft.gradient(startColorstr=\"#ff7f00\", endColorstr=\"#bf5f00\");\tbackground: -o-linear-gradient(top,#ff7f00,bf5f00);\r\n");
+      out.write("\r\n");
+      out.write("\tbackground-color:#ff7f00;\r\n");
+      out.write("\tborder:0px solid #000000;\r\n");
+      out.write("\ttext-align:center;\r\n");
+      out.write("\tborder-width:0px 0px 1px 1px;\r\n");
+      out.write("\tfont-size:14px;\r\n");
+      out.write("\tfont-family:Arial;\r\n");
+      out.write("\tfont-weight:bold;\r\n");
+      out.write("\tcolor:#ffffff;\r\n");
+      out.write("}\r\n");
+      out.write(".CSSTableGenerator tr:first-child:hover td{\r\n");
+      out.write("\tbackground:-o-linear-gradient(bottom, #ff7f00 5%, #bf5f00 100%);\tbackground:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff7f00), color-stop(1, #bf5f00) );\r\n");
+      out.write("\tbackground:-moz-linear-gradient( center top, #ff7f00 5%, #bf5f00 100% );\r\n");
+      out.write("\tfilter:progid:DXImageTransform.Microsoft.gradient(startColorstr=\"#ff7f00\", endColorstr=\"#bf5f00\");\tbackground: -o-linear-gradient(top,#ff7f00,bf5f00);\r\n");
+      out.write("\r\n");
+      out.write("\tbackground-color:#ff7f00;\r\n");
+      out.write("}\r\n");
+      out.write(".CSSTableGenerator tr:first-child td:first-child{\r\n");
+      out.write("\tborder-width:0px 0px 1px 0px;\r\n");
+      out.write("}\r\n");
+      out.write(".CSSTableGenerator tr:first-child td:last-child{\r\n");
+      out.write("\tborder-width:0px 0px 1px 1px;\r\n");
+      out.write("}\r\n");
+      out.write("</style>\r\n");
       out.write("<title>Test Map</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
@@ -189,12 +286,33 @@ Restaurant r = (Restaurant) rList.get(z);
       out.write("<table><tr><td width=\"10\" colspan=\"2\"> <div id=\"map_canvas\" style=\"width: 580px; height: 500px\"></div></td></tr></table>\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("<div class=\"CSSTableGenerator\" >\r\n");
       out.write("<table>\r\n");
+      out.write("<tr>\r\n");
+      out.write("    <td>\r\n");
+      out.write("        Restaurant ID\r\n");
+      out.write("    </td>\r\n");
+      out.write("    <td >\r\n");
+      out.write("        Restaurant Name\r\n");
+      out.write("    </td>\r\n");
+      out.write("    <td>\r\n");
+      out.write("        Address\r\n");
+      out.write("    </td>\r\n");
+      out.write("    <td>\r\n");
+      out.write("        City\r\n");
+      out.write("    </td>\r\n");
+      out.write("    <td>\r\n");
+      out.write("        Zipcode\r\n");
+      out.write("    </td>\r\n");
+      out.write("    <td>\r\n");
+      out.write("        Rating\r\n");
+      out.write("    </td>\r\n");
+      out.write("</tr>\r\n");
       //  s:iterator
       org.apache.struts2.views.jsp.IteratorTag _jspx_th_s_005fiterator_005f0 = (org.apache.struts2.views.jsp.IteratorTag) _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue.get(org.apache.struts2.views.jsp.IteratorTag.class);
       _jspx_th_s_005fiterator_005f0.setPageContext(_jspx_page_context);
       _jspx_th_s_005fiterator_005f0.setParent(null);
-      // /success.jsp(103,0) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      // /success.jsp(221,0) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
       _jspx_th_s_005fiterator_005f0.setValue("restaurantList");
       int _jspx_eval_s_005fiterator_005f0 = _jspx_th_s_005fiterator_005f0.doStartTag();
       if (_jspx_eval_s_005fiterator_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -228,9 +346,9 @@ String locality = request.getAttribute("locality").toString();
           org.apache.struts2.views.jsp.URLTag _jspx_th_s_005furl_005f0 = (org.apache.struts2.views.jsp.URLTag) _005fjspx_005ftagPool_005fs_005furl_0026_005fid_005faction.get(org.apache.struts2.views.jsp.URLTag.class);
           _jspx_th_s_005furl_005f0.setPageContext(_jspx_page_context);
           _jspx_th_s_005furl_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-          // /success.jsp(112,4) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+          // /success.jsp(230,4) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
           _jspx_th_s_005furl_005f0.setId("url");
-          // /success.jsp(112,4) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+          // /success.jsp(230,4) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
           _jspx_th_s_005furl_005f0.setAction("infoAction");
           int _jspx_eval_s_005furl_005f0 = _jspx_th_s_005furl_005f0.doStartTag();
           if (_jspx_eval_s_005furl_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -244,7 +362,7 @@ String locality = request.getAttribute("locality").toString();
               org.apache.struts2.views.jsp.ParamTag _jspx_th_s_005fparam_005f0 = (org.apache.struts2.views.jsp.ParamTag) _005fjspx_005ftagPool_005fs_005fparam_0026_005fname.get(org.apache.struts2.views.jsp.ParamTag.class);
               _jspx_th_s_005fparam_005f0.setPageContext(_jspx_page_context);
               _jspx_th_s_005fparam_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005furl_005f0);
-              // /success.jsp(112,40) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+              // /success.jsp(230,40) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
               _jspx_th_s_005fparam_005f0.setName("resID");
               int _jspx_eval_s_005fparam_005f0 = _jspx_th_s_005fparam_005f0.doStartTag();
               if (_jspx_eval_s_005fparam_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -307,10 +425,6 @@ String locality = request.getAttribute("locality").toString();
           if (_jspx_meth_s_005fproperty_005f3(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
             return;
           out.write("</td>\r\n");
-          out.write("<td>");
-          if (_jspx_meth_s_005fproperty_005f4(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
-            return;
-          out.write("</td>\r\n");
           out.write("\r\n");
           out.write("</tr>\r\n");
           int evalDoAfterBody = _jspx_th_s_005fiterator_005f0.doAfterBody();
@@ -329,6 +443,7 @@ String locality = request.getAttribute("locality").toString();
       out.write("\r\n");
       out.write("\r\n");
       out.write("</table>\r\n");
+      out.write("</div>\r\n");
       out.write("</body>\r\n");
       out.write("<script>\r\n");
       out.write("google.maps.event.addDomListener(window, 'load', initialize);\r\n");
@@ -354,7 +469,7 @@ String locality = request.getAttribute("locality").toString();
     org.apache.struts2.views.jsp.ui.AnchorTag _jspx_th_s_005fa_005f0 = (org.apache.struts2.views.jsp.ui.AnchorTag) _005fjspx_005ftagPool_005fs_005fa_0026_005fhref.get(org.apache.struts2.views.jsp.ui.AnchorTag.class);
     _jspx_th_s_005fa_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fa_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /success.jsp(113,0) name = href type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /success.jsp(231,0) name = href type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fa_005f0.setHref("%{url}");
     int _jspx_eval_s_005fa_005f0 = _jspx_th_s_005fa_005f0.doStartTag();
     if (_jspx_eval_s_005fa_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -390,7 +505,7 @@ String locality = request.getAttribute("locality").toString();
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f0 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fa_005f0);
-    // /success.jsp(113,19) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /success.jsp(231,19) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f0.setValue("resID");
     int _jspx_eval_s_005fproperty_005f0 = _jspx_th_s_005fproperty_005f0.doStartTag();
     if (_jspx_th_s_005fproperty_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -409,7 +524,7 @@ String locality = request.getAttribute("locality").toString();
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f1 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /success.jsp(114,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /success.jsp(232,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f1.setValue("name");
     int _jspx_eval_s_005fproperty_005f1 = _jspx_th_s_005fproperty_005f1.doStartTag();
     if (_jspx_th_s_005fproperty_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -428,8 +543,8 @@ String locality = request.getAttribute("locality").toString();
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f2 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f2.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /success.jsp(117,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f2.setValue("longitude");
+    // /success.jsp(235,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fproperty_005f2.setValue("postcode");
     int _jspx_eval_s_005fproperty_005f2 = _jspx_th_s_005fproperty_005f2.doStartTag();
     if (_jspx_th_s_005fproperty_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f2);
@@ -447,33 +562,14 @@ String locality = request.getAttribute("locality").toString();
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f3 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f3.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /success.jsp(118,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f3.setValue("postcode");
+    // /success.jsp(236,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fproperty_005f3.setValue("rating");
     int _jspx_eval_s_005fproperty_005f3 = _jspx_th_s_005fproperty_005f3.doStartTag();
     if (_jspx_th_s_005fproperty_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f3);
       return true;
     }
     _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f3);
-    return false;
-  }
-
-  private boolean _jspx_meth_s_005fproperty_005f4(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fiterator_005f0, PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  s:property
-    org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f4 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
-    _jspx_th_s_005fproperty_005f4.setPageContext(_jspx_page_context);
-    _jspx_th_s_005fproperty_005f4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /success.jsp(119,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f4.setValue("rating");
-    int _jspx_eval_s_005fproperty_005f4 = _jspx_th_s_005fproperty_005f4.doStartTag();
-    if (_jspx_th_s_005fproperty_005f4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f4);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f4);
     return false;
   }
 }

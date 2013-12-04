@@ -10,6 +10,7 @@ public class UserDAOImpl implements UserDAO{
 
 	private Connection connection;
     private Statement statement;
+    private int updates;
     
 	public ArrayList<User> selectComments(int resID) throws SQLException {
 		String query = "SELECT * FROM users WHERE resID= " + resID;
@@ -24,10 +25,10 @@ public class UserDAOImpl implements UserDAO{
             rs = statement.executeQuery(query);
             while(rs.next()) {
                 user = new User();
-                user.setRating(rs.getInt("rating"));
+                user.setUserRating(rs.getInt("rating"));
                 user.setResID(rs.getInt("resID"));
                 user.setUserName(rs.getString("userName"));
-                user.setComment(rs.getString("comment"));
+                user.setUserComment(rs.getString("comment"));
                 user.setCommentID(rs.getInt("commentID"));
                 arrUser.add(user);
 
@@ -41,33 +42,21 @@ public class UserDAOImpl implements UserDAO{
 	}
 	
 	
-	public ArrayList<User> addComments(int resID, String name, String comment, int rating) throws SQLException {
-		String query = "SELECT * FROM users WHERE resID= " + resID;
-        ResultSet rs = null;
-        User user = null;
-        ArrayList<User> arrUser = new ArrayList<User>();
+	public void addComments(int resID, String name, String comment, int rating) throws SQLException {
+		String query = "INSERT into users (resID, commentID, userName, userComment, userRating) VALUES( '" + resID 
+				+ "', NULL , " + "'" + name + "', '" + comment + "', '" + rating + "');";
         
         try {
 
             connection = ConnectionFactory.getConnection();
             statement = connection.createStatement();
-            rs = statement.executeQuery(query);
-            while(rs.next()) {
-                user = new User();
-                user.setRating(rs.getInt("rating"));
-                user.setResID(rs.getInt("resID"));
-                user.setUserName(rs.getString("userName"));
-                user.setComment(rs.getString("comment"));
-                user.setCommentID(rs.getInt("commentID"));
-                arrUser.add(user);
+            updates = statement.executeUpdate(query);
 
-            }
         } finally {
-            DbUtil.close(rs);
             DbUtil.close(statement);
             DbUtil.close(connection);
         }
-        return arrUser;
+
 	}
 
 }
