@@ -6,8 +6,11 @@ import java.util.ArrayList;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.dispatcher.mapper.ActionMapping;
+import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.util.ServletContextAware;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -27,10 +30,25 @@ public class RestaurantAction extends ActionSupport implements ModelDriven<Array
 	Restaurant restaurant = new Restaurant();
 	RestaurantDAOImpl restaurantDAO = new RestaurantDAOImpl();
 	ArrayList<Restaurant> restaurantList  = new ArrayList<Restaurant>();
+	private int resID;
 	
+	public int getResID() {
+		return resID;
+	}
+
+
+
+	public void setResID(int resID) {
+		this.resID = resID;
+	}
+
+
+
 	public String execute() throws Exception{
 		return "success";
 	}
+	
+
 	
 	public ArrayList<Restaurant> getModel() {
 		return restaurantList;
@@ -58,6 +76,10 @@ public class RestaurantAction extends ActionSupport implements ModelDriven<Array
 		request.setAttribute("resList", restaurantList);
 		return "success";
 
+	}
+	
+	public String info(){
+		return "success";
 	}
 	public ArrayList<Restaurant> getRestaurantList(){
 		return restaurantList;

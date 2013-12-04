@@ -101,13 +101,23 @@
 
 <table>
 <s:iterator value="restaurantList">
+<%String resID = request.getAttribute("resID").toString();%>
+<%String website = request.getAttribute("website").toString();%>
+<%String postcode = request.getAttribute("postcode").toString();%>
+<%String address = request.getAttribute("address").toString();%>
+<%String locality = request.getAttribute("locality").toString();%>
+
+
 <tr>
-<td><s:property value="resID"/></td>
-<td><s:property value="name"/></td>
-<td><s:property value="address"/></td>
-<td><s:property value="latitude"/></td>
+<td><s:url id="url" action="infoAction"><s:param name="resID"><%=resID %></s:param></s:url>
+<s:a href="%{url}"><s:property value="resID"/></s:a></td>
+<td><a href="<%=website %>"><s:property value="name"/></a></td>
+<td><%=address %></td>
+<td> <%=locality %></td>
 <td><s:property value="longitude"/></td>
 <td><s:property value="postcode"/></td>
+<td><s:property value="rating"/></td>
+
 </tr>
 </s:iterator>
 
