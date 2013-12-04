@@ -25,10 +25,10 @@ public class UserDAOImpl implements UserDAO{
             rs = statement.executeQuery(query);
             while(rs.next()) {
                 user = new User();
-                user.setUserRating(rs.getInt("rating"));
+                user.setUserRating(rs.getInt("userRating"));
                 user.setResID(rs.getInt("resID"));
                 user.setUserName(rs.getString("userName"));
-                user.setUserComment(rs.getString("comment"));
+                user.setUserComment(rs.getString("userComment"));
                 user.setCommentID(rs.getInt("commentID"));
                 arrUser.add(user);
 

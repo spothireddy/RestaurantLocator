@@ -9,7 +9,6 @@ public class User {
 	private String userName;
 	private String userComment;
 	private int userRating;
-	
 	public int getResID() {
 		return resID;
 	}
@@ -31,8 +30,8 @@ public class User {
 	public String getUserComment() {
 		return userComment;
 	}
-	public void setUserComment(String userCcomment) {
-		this.userComment = userCcomment;
+	public void setUserComment(String userComment) {
+		this.userComment = userComment;
 	}
 	public int getUserRating() {
 		return userRating;
@@ -40,6 +39,8 @@ public class User {
 	public void setUserRating(int userRating) {
 		this.userRating = userRating;
 	}
+	
+
 	
 	
 	

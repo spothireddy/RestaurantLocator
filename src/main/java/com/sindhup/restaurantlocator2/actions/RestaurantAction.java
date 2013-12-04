@@ -19,6 +19,8 @@ import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.Preparable;
 import com.sindhup.restaurantlocator2.Restaurant;
 import com.sindhup.restaurantlocator2.RestaurantDAOImpl;
+import com.sindhup.restaurantlocator2.User;
+import com.sindhup.restaurantlocator2.UserDAOImpl;
 
 public class RestaurantAction extends ActionSupport implements ModelDriven<ArrayList<Restaurant>>, ServletContextAware{
 
@@ -32,6 +34,10 @@ public class RestaurantAction extends ActionSupport implements ModelDriven<Array
 	ArrayList<Restaurant> restaurantList  = new ArrayList<Restaurant>();
 	ArrayList<Restaurant> commentList  = new ArrayList<Restaurant>();
 	ArrayList<Restaurant> restaurantCuisineList = new ArrayList<Restaurant>();
+	UserDAOImpl userDAO = new UserDAOImpl();
+	ArrayList<User> userList = new ArrayList<User>();
+	
+	
 	private int resID;
 	
 	public int getResID() {
@@ -83,6 +89,7 @@ public class RestaurantAction extends ActionSupport implements ModelDriven<Array
 	public String info() throws SQLException{
 		restaurantList = restaurantDAO.selectRestaurant(resID);
 		restaurantCuisineList = restaurantDAO.selecCuisines(resID);
+		userList = userDAO.selectComments(resID);
 		return "success";
 	}
 	
@@ -90,8 +97,85 @@ public class RestaurantAction extends ActionSupport implements ModelDriven<Array
 		this.setResID(Integer.parseInt(request.getParameter("resID")));
 		restaurantList = restaurantDAO.selectRestaurant(resID);
 		restaurantCuisineList = restaurantDAO.selecCuisines(resID);
+		userDAO.addComments(Integer.parseInt(request.getParameter("resID")), request.getParameter("userName").toString()
+				, request.getParameter("userComment").toString(), Integer.parseInt(request.getParameter("userRating")));
+		userList = userDAO.selectComments(resID);
 		return "success";
 	}
+	
+	public String selectResName() throws SQLException{
+		restaurantList  = new ArrayList<Restaurant>();
+		restaurantList = restaurantDAO.selectResName(request.getParameter("name").toString());
+		request.setAttribute("resList", restaurantList);
+
+		return "success";
+	}
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+
+
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
+	}
+
+
+
+	public ArrayList<Restaurant> getCommentList() {
+		return commentList;
+	}
+
+
+
+	public void setCommentList(ArrayList<Restaurant> commentList) {
+		this.commentList = commentList;
+	}
+
+
+
+	public ArrayList<Restaurant> getRestaurantCuisineList() {
+		return restaurantCuisineList;
+	}
+
+
+
+	public void setRestaurantCuisineList(ArrayList<Restaurant> restaurantCuisineList) {
+		this.restaurantCuisineList = restaurantCuisineList;
+	}
+
+
+
+	public UserDAOImpl getUserDAO() {
+		return userDAO;
+	}
+
+
+
+	public void setUserDAO(UserDAOImpl userDAO) {
+		this.userDAO = userDAO;
+	}
+
+
+
+	public ArrayList<User> getUserList() {
+		return userList;
+	}
+
+
+
+	public void setUserList(ArrayList<User> userList) {
+		this.userList = userList;
+	}
+
+
+
+	public void setRestaurantList(ArrayList<Restaurant> restaurantList) {
+		this.restaurantList = restaurantList;
+	}
+
+
+
 	public ArrayList<Restaurant> getRestaurantList(){
 		return restaurantList;
 	}

@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Restaurant Finder!C1</h1>
+<h1>Restaurant Finder</h1>
 <h3>Find by zipcode:</h3>
 <s:form  action="selectZipcodeAction" >
   <s:textfield name="postcode" label="Postcode" />
@@ -16,18 +16,18 @@
 </s:form>
 
 <br />
-<h3>Find by zipcode and cuisine:</h3>
+<h3>Find by potcode and cuisine:</h3>
 <s:form  action="selectZipCusAction" >
   <s:textfield name="postcode" label="Postcode" />
   <s:textfield name="cuisine" label="Cuisine" />
   <s:submit />
 </s:form>
 
-
-<h3>Test zip:</h3>
-<s:form  action="testMapAction" >
-  <s:textfield name="postcode" label="Postcode" />
+<h3>Find by restaurant name:</h3>
+<s:form  action="selectResNameAction" >
+  <s:textfield name="name" label="Restaurant Name" />
   <s:submit />
 </s:form>
+
 </body>
 </html>

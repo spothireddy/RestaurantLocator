@@ -107,14 +107,15 @@
 	border-width:0px 0px 1px 1px;
 }
 </style>
-<title>Test Map</title>
+<title>Your Results</title>
 </head>
 <body>
-<h1>Test Map With multiple</h1>
-<%=request.getParameter("postcode") %>
+<h1>Your Results</h1>
 <%ArrayList<Restaurant> rList = (ArrayList<Restaurant>)request.getAttribute("resList");%>
 
-<%=rList.size() %>
+<p>Restaurants returned: <%=rList.size() %></p>
+
+<h3>Map View</h3>
 	 
 <script type="text/javascript">
 <%if (rList.size()>0){%>    
@@ -195,7 +196,7 @@
 </script>
 <table><tr><td width="10" colspan="2"> <div id="map_canvas" style="width: 580px; height: 500px"></div></td></tr></table>
 
-
+<h3>Table View</h3>
 <div class="CSSTableGenerator" >
 <table>
 <tr>

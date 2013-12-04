@@ -146,6 +146,40 @@ public class RestaurantDAOImpl implements RestaurantDAO {
 	        }
 	        return arrCus;
 	    }
+	
+	public ArrayList<Restaurant> selectResName(String name) throws SQLException{
+		 String query = "SELECT * FROM restaurant WHERE name LIKE '%" + name +"%'";
+	        ResultSet rs = null;
+	        Restaurant res = null;
+	        ArrayList<Restaurant> arrRes = new ArrayList<Restaurant>();
+	        
+	        try {
+	            connection = ConnectionFactory.getConnection();
+	            statement = connection.createStatement();
+	            rs = statement.executeQuery(query);
+	            while(rs.next()) {
+	                res = new Restaurant();
+	                res.setAddress(rs.getString("address"));
+	                res.setLatitude(rs.getDouble("latitude"));
+	                res.setLocality(rs.getString("locality"));
+	                res.setLongitude(rs.getDouble("longitude"));
+	                res.setName(rs.getString("name"));
+	                res.setPostcode(rs.getInt("postcode"));
+	                res.setRating(rs.getDouble("rating"));
+	                res.setResID(rs.getInt("resID"));
+	                res.setTel(rs.getString("tel"));
+	                res.setWebsite(rs.getString("website"));
+	                
+	                arrRes.add(res);
+
+	            }
+	        } finally {
+	            DbUtil.close(rs);
+	            DbUtil.close(statement);
+	            DbUtil.close(connection);
+	        }
+	        return arrRes;
+	    }
 }
 
 	

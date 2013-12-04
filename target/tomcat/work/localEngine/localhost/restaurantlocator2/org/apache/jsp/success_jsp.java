@@ -176,18 +176,18 @@ public final class success_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\tborder-width:0px 0px 1px 1px;\r\n");
       out.write("}\r\n");
       out.write("</style>\r\n");
-      out.write("<title>Test Map</title>\r\n");
+      out.write("<title>Your Results</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("<h1>Test Map With multiple</h1>\r\n");
-      out.print(request.getParameter("postcode") );
-      out.write('\r');
-      out.write('\n');
+      out.write("<h1>Your Results</h1>\r\n");
 ArrayList<Restaurant> rList = (ArrayList<Restaurant>)request.getAttribute("resList");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("<p>Restaurants returned: ");
       out.print(rList.size() );
+      out.write("</p>\r\n");
       out.write("\r\n");
+      out.write("<h3>Map View</h3>\r\n");
       out.write("\t \r\n");
       out.write("<script type=\"text/javascript\">\r\n");
 if (rList.size()>0){
@@ -285,7 +285,7 @@ Restaurant r = (Restaurant) rList.get(z);
       out.write("</script>\r\n");
       out.write("<table><tr><td width=\"10\" colspan=\"2\"> <div id=\"map_canvas\" style=\"width: 580px; height: 500px\"></div></td></tr></table>\r\n");
       out.write("\r\n");
-      out.write("\r\n");
+      out.write("<h3>Table View</h3>\r\n");
       out.write("<div class=\"CSSTableGenerator\" >\r\n");
       out.write("<table>\r\n");
       out.write("<tr>\r\n");
@@ -312,7 +312,7 @@ Restaurant r = (Restaurant) rList.get(z);
       org.apache.struts2.views.jsp.IteratorTag _jspx_th_s_005fiterator_005f0 = (org.apache.struts2.views.jsp.IteratorTag) _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue.get(org.apache.struts2.views.jsp.IteratorTag.class);
       _jspx_th_s_005fiterator_005f0.setPageContext(_jspx_page_context);
       _jspx_th_s_005fiterator_005f0.setParent(null);
-      // /success.jsp(221,0) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      // /success.jsp(222,0) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
       _jspx_th_s_005fiterator_005f0.setValue("restaurantList");
       int _jspx_eval_s_005fiterator_005f0 = _jspx_th_s_005fiterator_005f0.doStartTag();
       if (_jspx_eval_s_005fiterator_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -346,9 +346,9 @@ String locality = request.getAttribute("locality").toString();
           org.apache.struts2.views.jsp.URLTag _jspx_th_s_005furl_005f0 = (org.apache.struts2.views.jsp.URLTag) _005fjspx_005ftagPool_005fs_005furl_0026_005fid_005faction.get(org.apache.struts2.views.jsp.URLTag.class);
           _jspx_th_s_005furl_005f0.setPageContext(_jspx_page_context);
           _jspx_th_s_005furl_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-          // /success.jsp(230,4) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+          // /success.jsp(231,4) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
           _jspx_th_s_005furl_005f0.setId("url");
-          // /success.jsp(230,4) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+          // /success.jsp(231,4) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
           _jspx_th_s_005furl_005f0.setAction("infoAction");
           int _jspx_eval_s_005furl_005f0 = _jspx_th_s_005furl_005f0.doStartTag();
           if (_jspx_eval_s_005furl_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -362,7 +362,7 @@ String locality = request.getAttribute("locality").toString();
               org.apache.struts2.views.jsp.ParamTag _jspx_th_s_005fparam_005f0 = (org.apache.struts2.views.jsp.ParamTag) _005fjspx_005ftagPool_005fs_005fparam_0026_005fname.get(org.apache.struts2.views.jsp.ParamTag.class);
               _jspx_th_s_005fparam_005f0.setPageContext(_jspx_page_context);
               _jspx_th_s_005fparam_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005furl_005f0);
-              // /success.jsp(230,40) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+              // /success.jsp(231,40) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
               _jspx_th_s_005fparam_005f0.setName("resID");
               int _jspx_eval_s_005fparam_005f0 = _jspx_th_s_005fparam_005f0.doStartTag();
               if (_jspx_eval_s_005fparam_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -469,7 +469,7 @@ String locality = request.getAttribute("locality").toString();
     org.apache.struts2.views.jsp.ui.AnchorTag _jspx_th_s_005fa_005f0 = (org.apache.struts2.views.jsp.ui.AnchorTag) _005fjspx_005ftagPool_005fs_005fa_0026_005fhref.get(org.apache.struts2.views.jsp.ui.AnchorTag.class);
     _jspx_th_s_005fa_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fa_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /success.jsp(231,0) name = href type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /success.jsp(232,0) name = href type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fa_005f0.setHref("%{url}");
     int _jspx_eval_s_005fa_005f0 = _jspx_th_s_005fa_005f0.doStartTag();
     if (_jspx_eval_s_005fa_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -505,7 +505,7 @@ String locality = request.getAttribute("locality").toString();
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f0 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fa_005f0);
-    // /success.jsp(231,19) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /success.jsp(232,19) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f0.setValue("resID");
     int _jspx_eval_s_005fproperty_005f0 = _jspx_th_s_005fproperty_005f0.doStartTag();
     if (_jspx_th_s_005fproperty_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -524,7 +524,7 @@ String locality = request.getAttribute("locality").toString();
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f1 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /success.jsp(232,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /success.jsp(233,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f1.setValue("name");
     int _jspx_eval_s_005fproperty_005f1 = _jspx_th_s_005fproperty_005f1.doStartTag();
     if (_jspx_th_s_005fproperty_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -543,7 +543,7 @@ String locality = request.getAttribute("locality").toString();
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f2 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f2.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /success.jsp(235,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /success.jsp(236,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f2.setValue("postcode");
     int _jspx_eval_s_005fproperty_005f2 = _jspx_th_s_005fproperty_005f2.doStartTag();
     if (_jspx_th_s_005fproperty_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -562,7 +562,7 @@ String locality = request.getAttribute("locality").toString();
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f3 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f3.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /success.jsp(236,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /success.jsp(237,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f3.setValue("rating");
     int _jspx_eval_s_005fproperty_005f3 = _jspx_th_s_005fproperty_005f3.doStartTag();
     if (_jspx_th_s_005fproperty_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

@@ -60,5 +60,12 @@
          <result name="error">/error.jsp</result>
       </action>
       
+      
+      <action name="selectResNameAction" 
+         class="com.sindhup.restaurantlocator2.actions.RestaurantAction"
+         method="selectResName">
+         <result name="success">/success.jsp</result>
+         <result name="error">/error.jsp</result>
+      </action>
    </package>
 </struts>
