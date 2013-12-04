@@ -30,6 +30,7 @@ public class RestaurantAction extends ActionSupport implements ModelDriven<Array
 	Restaurant restaurant = new Restaurant();
 	RestaurantDAOImpl restaurantDAO = new RestaurantDAOImpl();
 	ArrayList<Restaurant> restaurantList  = new ArrayList<Restaurant>();
+	ArrayList<Restaurant> commentList  = new ArrayList<Restaurant>();
 	private int resID;
 	
 	public int getResID() {
@@ -79,6 +80,12 @@ public class RestaurantAction extends ActionSupport implements ModelDriven<Array
 	}
 	
 	public String info(){
+		return "success";
+	}
+	
+	public String comment(){
+		//somestuff
+		//add comment to database
 		return "success";
 	}
 	public ArrayList<Restaurant> getRestaurantList(){

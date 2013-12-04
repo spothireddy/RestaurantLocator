@@ -6,4 +6,5 @@ import java.util.ArrayList;
 public interface UserDAO {
 
 	ArrayList<User> selectComments(int resID) throws SQLException;
+	//addComment
 }

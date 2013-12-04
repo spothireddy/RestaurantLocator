@@ -41,7 +41,7 @@ public class UserDAOImpl implements UserDAO{
 	}
 	
 	
-	public ArrayList<User> addComments(int resID) throws SQLException {
+	public ArrayList<User> addComments(int resID, String name, String comment, int rating) throws SQLException {
 		String query = "SELECT * FROM users WHERE resID= " + resID;
         ResultSet rs = null;
         User user = null;
